@@ -19,16 +19,6 @@ module.exports = {
         type: Sequelize.STRING,
       },
       createdAt: {
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-      },
-      homepageId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },

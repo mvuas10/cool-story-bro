@@ -24,16 +24,6 @@ module.exports = {
         defaultValue: "#000000",
       },
       createdAt: {
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },

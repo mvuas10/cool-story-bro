@@ -1,3 +1,5 @@
+//2. Set up relation user has 1 homepage
+
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   const user = sequelize.define(
@@ -5,22 +7,22 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
       email: {
         type: DataTypes.STRING,
         unique: true,
-        allowNull: false
+        allowNull: false,
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false
-      }
+        allowNull: false,
+      },
     },
     {}
   );
-  user.associate = function(models) {
-    // associations can be defined here
+  user.associate = function (models) {
+    user.hasOne(models.homepage);
   };
   return user;
 };

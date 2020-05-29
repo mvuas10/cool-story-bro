@@ -1,3 +1,6 @@
+//2. Set up relation in homepage has many stories
+//3. Set up relation homepage belongs to 1 user
+
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   const homepage = sequelize.define(
@@ -16,16 +19,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         defaultValue: "#000000",
       },
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
     },
     {}
   );
 
   homepage.associate = function (models) {
-    // associations can be defined here
+    homepage.hasMany(models.story);
+    homepage.belongsTo(models.user);
   };
   return homepage;
 };

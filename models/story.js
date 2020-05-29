@@ -1,3 +1,5 @@
+//3. Stories belong to homepage
+
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   const story = sequelize.define(
@@ -9,15 +11,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       content: DataTypes.TEXT,
       imageUrl: DataTypes.STRING,
-      homepageId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
     },
     {}
   );
   story.associate = function (models) {
-    // associations can be defined here
+    story.belongsTo(models.homepage);
   };
   return story;
 };
