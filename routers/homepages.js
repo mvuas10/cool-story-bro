@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const HomePage = require("../models").homepage;
-const Story = require("../models").story;
+const Story = require("../models").story; //Include story
 
 const router = new Router();
 
@@ -17,7 +17,7 @@ router.get("/:id", async (req, res, next) => {
   try {
     const id = parseInt(req.params.id);
 
-    const homepage = await HomePage.findByPk(id, { include: [Story] });
+    const homepage = await HomePage.findByPk(id, { include: [Story] }); //Include story
 
     if (!homepage) {
       res.status(404).send("Homepage not found");
